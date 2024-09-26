@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicacion 01</title>
+
+    <!--estilos enlazado-->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    /> -->
+
+    <!-- estilos relativo -->
+    <link
+      href="./bootstrap-5.3.3-dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      h1{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .cajas1{
+        display: flex;
+        flex-direction: row;
+        /* justify-content: marca el espacio entre medio de los elementos dejando a cada elemento pegados en los margenes y en medio */
+        /* justify-content: space-between; */
+        /*space-around: redistribuye el espacio por caja ej: 1 caja 1 1 caja 1*/
+        justify-content: space-around;
+        /*space-evelyn: hace un promedio del total del ancho y deja el mismo espacio entre todos los contenidos*/
+        /* justify-content: space-evenly; */
+
+        border: 1px solid black;
+        height: 200px;
+        align-items:end;
+        margin-bottom: 5px;
+      /*   align-items: este envia los elementos dependiendo de la flex direction si esta en rowm emtomces aling item los alinea en arriba abajo y si flexdirecction esta en colum el aling item lo alinea a izquierda y derecha*/
+      }
+      
+      .parrafos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border: 1px solid black;
+        margin-bottom: 5px;
+          
+      }
+
+      .textos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border: 1px solid black;
+        /*baseline alinea sobre una mism a linea todos los contenidos*/
+        align-items: baseline;
+        height: 200px;
+      }
+
+      .colores{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border: 1px solid black;
+        margin-bottom: 5px;
+        height: 200px;
+        width: 300px;
+        align-items: center;
+
+      }
+
+        .colores--rojo{
+        background-color: red;
+        color: white;
+        width: 33%;
+      }
+      .colores--verde{
+        background-color: green;
+        color: white;
+        text-align: center;
+        width: 33%;
+      }
+      .colores--azul{
+        background-color: blue;
+        color: white;
+        text-align: center;
+        width: 33%;
+      } 
+      .colores--amarillo{
+        background-color: yellow;
+        color: white;
+        width: 33%;
+        
+      }
+      .colores2{
+        display: flex;
+        flex-direction: row;
+
+        /*el wrap hace que la caja una vez que no entre en la fila lo baja */
+        flex-wrap: wrap;
+        /*Justify content: pone los espacios en medio*/
+        justify-content: space-evenly;
+        /*align content: pone los espacios en medio*/
+        align-content: space-around;
+        height: 200px;
+        width: 300px;
+        border: 1px solid black;
+
+      }
+      .colores3{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: stretch;
+        height: 200px;
+        width: 300px;
+        border:1px solid black;
+
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>Aplicacion 1</h1>
+
+    </div>
+    <!--Aling items
+    significa que la propieda-->
+
+    <div class="cajas1">
+      <button type="button">Base class</button>
+      <button type="button">Primary</button>
+      <button type="button">Secondary</button>
+    </div>
+    <div class="parrafos">
+      <p> P1</p>
+      <p>P2 </p>
+      <p>P3</p>
+    </div>
+    <div class="textos">
+      <h1>Titulo 1</h1>
+      <h2>Titulo 2</h2>
+      <h3>Titulo 3</h3>
+      <p>Parrafo 4</p>
+    </div>  
+    <div class="colores">
+      <div class="colores--rojo">Rojo</div>
+      <div class="colores--azul">Azul</div>
+      <div class="colores--verde">Verde</div>
+    </div>
+
+    <div class="colores2">
+      <div class="colores--rojo">Rojo</div>
+      <div class="colores--azul">Azul</div>
+      <div class="colores--verde">Verde</div>
+      <div class="colores--amarillo">Amarillo</div>
+    </div>
+    <div class="colores3">
+      <div class="colores--rojo">Rojo</div>
+      <div class="colores--azul">Azul</div>
+      <div class="colores--verde">Verde</div>
+      <div class="colores--amarillo">Amarillo</div>
+    </div>
+
+    <!--scripts relativo-->
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <!--scripts enlazado-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script> -->
+  </body>
+</html>

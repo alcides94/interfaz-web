@@ -1,0 +1,85 @@
+/*RESETEO DE ESTILOS*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* inicializacion con variables, con JS puede atacar a root para realizar modificaciones */
+:root {
+  --color-primary: cyan;
+  --color-secondary: blue;
+  --maxWidth: 1200px;
+  --color-letter:white;
+}
+
+/*Fuentes personalizadas*/
+
+/*Utilizacion de fuentes  - accesibilidad*/
+/* 1 em = 16px */
+
+html {
+  /* Accesibilidad - 62.5% va a equivaler a 10px sobre tamaño Normal 
+     de nuestro navegador que está establecido en 16px */
+  /*se define el font size en 10px que es igual a 62.5 % para todo nuestro html y podremos trabajar con REM*/
+  font-size: 62.5%;
+}
+
+.container {
+  /* EN EL WIDTH TOMA LA VARIABLE DEFINIDA EN ROOT */
+  width: var(--maxWidth);
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: var(--color-primary);
+  text-align: center;
+  /*line-height sirve para centrar de arriba y abajo el contenido ocupando 
+    en este caso la mitad y mitad para cada elemento*/
+  line-height: 50px;
+  letter-spacing: 3px;
+  /* font-size: 62.5%; --> equivale a 10px Fuente Normal; */
+  /* 1.4rem --> equivale a 14px (1.4 * 10px) */
+  font-size: 1.4rem;
+}
+
+/*BARRA DE NAVEGACION*/
+
+.navbar {
+    width: 100%;
+    background-color: var(--color-secondary);
+    height: 40px;
+    font-size: 1.7rem;
+    color: var(--color-letter);
+    box-shadow: 0px 0px 20px grey;
+}
+
+.navbar_list{
+    /* display: flex;
+    flex-direction: row;  */
+    /* display: inline; */
+    margin: 0 auto;
+    width: 95%;
+}
+
+.list__item{
+    /*el inline - block va sobre los elementos definidos*/
+    /* display: inline-block; */
+    /*el modelo float: funciona de forma contraroa al de flex
+    el float cuando las cajas no caben en la misma fila baja  a la siguiente caja*/
+    float: left;
+    border-right: 1px solid black;
+    line-height: 40px;
+}
+
+.list__item a{
+    display: block;
+    color: var(--color-letter);
+    padding-left: 20px;
+    padding-right: 20px;
+}
