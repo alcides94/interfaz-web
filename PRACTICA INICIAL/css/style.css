@@ -1,0 +1,217 @@
+
+/*ESTILO DEL HEADER Y NAV*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 2px;
+}
+
+nav{
+    background-color: #ffffff;
+    display: flex;
+    list-style-type: none;
+    
+}
+a{
+    text-decoration: none;
+}
+.nav2{
+    display: inline-block;
+    background-color: #e7eae7;
+    text-align: right;
+    width: 100%;
+   
+}
+.nav2 ul{
+    display: inline-block;
+    
+}
+.nav2 ul li{
+    margin-left: 15px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.nav2 ul{
+    display: inline-block;
+    list-style-type: none;
+    
+    text-align: center;
+
+}
+
+section {
+    /*border: solid 1px;*/
+    margin: 0px;
+  
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 3rem;
+    
+}
+
+p{
+    text-align: justify;
+    padding: 1rem;
+}
+
+/*SOBRE MI*/
+.sobremi{
+    display:flex;
+    width: 100%;
+    height: 20rem;
+    margin: 0;
+    background-color: #cfd4d0;
+    
+}
+
+.sobremi>article{
+    width: 45%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.sobremi>article>.imgsobremi{ 
+    
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.sobremi>article>.imgsobremi>img{ 
+    
+    width: 13rem;
+    height: 19rem;
+    border-radius: 100%;
+}
+
+
+
+/*Aficiones*/
+.aficiones{
+    display:flex;
+    width: 100%;
+    height: 20rem;
+    margin: 0;
+    background-color: #b6bfb8;
+    
+}
+
+.aficiones>article{
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.aficiones>article>.img-aficiones{ 
+    
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.aficiones>article>.img-aficiones>img{ 
+    
+    width: 15rem;
+    height: 15rem;
+    border-radius: 100%;
+}
+
+/*CIUDADES*/
+
+.ciudades{
+    background-color: #e7eae7;
+    width: 100%;
+    height: 20rem;
+    text-align: center;
+}
+.card-ciudades{
+    display: flex;
+
+}
+.card-ciudades>div{
+    width: 33%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+
+}
+.card-ciudades>div>img{
+    width: 13rem;
+    height: 13rem;
+    border: solid 2px orange;
+}
+
+
+/*ACTIVIDADES*/
+
+.actividades{
+    background-color: #cfd4d0;
+}
+
+table{
+    border: solid 1px;
+    width: 100%;
+    background-color: transparent;
+}
+
+caption{
+    text-align: center;
+}
+
+td,th{
+    text-align: center;
+    border: solid 1px;
+    width: 15%;
+}
+
+td>a>img{
+width: 2rem;
+height: 2rem;
+}
+
+/*GALERIA*/
+
+/*Esto se aprendio de clases y viendo tutoriales de miduev*/
+.galeria{
+    display: flex;
+    width: 100%;
+    height: 430px;
+}
+
+.galeria img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+.galeria img:hover {
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+/*FOOTER DONDE IRA LA INFO ADICIONAL*/
+
+.informacion{
+    background-color: #e7eae7;
+    text-align: center;
+
+}
+.informacion>p{
+    text-align: center;
+}
+.informacion>a>img{
+    width: 3rem;
+    height: 3rem;
+
+}
