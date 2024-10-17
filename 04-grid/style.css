@@ -1,0 +1,111 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.container{
+    border: 1px solid black;
+    width: 80%;
+    
+    
+
+    /*sirve para centrar el contenido*/
+    margin: 0 auto;
+}
+
+
+.container__title, .container__subtitle{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.container__subtitle{
+    border-bottom: 1px solid black;
+}
+
+.container__layout{
+    /*METODOLOGIA GRID*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    height: 700px;
+    /* A NIVEL DE COLUMNA */
+    /*Si quiero mas tamaño en el medio*/
+    /*grid-template-columns: calc(25% - 10px) calc(50% - 10px) calc(25% - 10px); */
+    /*grid-template-columns: 1fr 2fr 1fr;*/
+
+    /*si quiero todas las columnas exactamente iguales*/
+    /*grid-template-columns: repeat(4, 1fr);*/
+
+    /* A NIVEL DE FILA */
+    grid-template-rows: 1fr 3fr 1fr 4fr; 
+    /*representa una fracción del espacio disponible en el contenedor de la cuadrícula*/ 
+
+
+
+
+    }
+
+.layout__box{
+    font-size: 20px;
+    padding: 20px;
+    color: white;
+}
+
+
+.layout__box--red{
+    background-color: red;
+
+}
+.layout__box--yellow{
+    background-color: yellow;
+ 
+}
+.layout__box--green{
+    background-color: green;
+
+}
+.layout__box--orange{
+    background-color: orange;
+
+}
+.layout__box--blue{
+    background-color: blue;
+
+}
+.layout__box--cyan{
+    background-color: cyan;
+
+}
+
+.layout__box--black{
+    background-color: black;
+    grid-column: 3/5;
+}
+.layout__box--pink{
+    background-color: pink;
+    /*CONBINAR COLUMNAS ENTRE DOS LINEAS*/
+    grid-column: 2/5;
+    /**/
+}
+.layout__box--salmon{
+    background-color: salmon;
+
+}
+.layout__box--yellowGreen{
+    background-color: yellowgreen;
+    
+    /*PARA CONBINAR COLUMNAS- SE CUENTA LAS LINEAS DE IZQUIERDA A DERECHA*/
+    grid-column-start: 1;
+    grid-column-end: 5;
+}

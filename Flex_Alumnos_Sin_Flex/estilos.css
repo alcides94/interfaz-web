@@ -79,22 +79,29 @@
 .content{
     /* Añadir aquí Flex y Align y/o justify */
     display: flex;
-    justify-content: space-around;
-   
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    /*justify-content: space-between;*/
     margin-top: 20px;
     margin-bottom: 20px;
+ 
 }
 .content__projects{
     /* Añadir aquí Flex y Align y/o justify */
-
-
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+    /*flex-basis: calc(100%/4);*/
+    width: 100%;
 }
 .projects__project{
     /* Añadir aquí Flex */
-
+    flex-basis: calc(100% / 4 - 30px);
+    /*width: 35%;*/
+    /**/
 
     margin-bottom: 25px;
-    margin-right: 20px;
+   margin-right: 20px;
     border: 1px solid #ccc;
 }
 .projects__project img{
@@ -127,7 +134,7 @@
 /* barra lateral */
 .content__lateral{
     /* Añadir aquí Flex */
-
+    width: 15%;
     display: flex;
     flex-direction: column;
     /**/
@@ -176,15 +183,21 @@
 /* Footer */
 .content__footer{
     /* Añadir aquí Flex y Align y/o justify */
+    display: flex;
+    justify-content: center;
 
+    /**/
 
     height: 120px;
     border-top: 1px solid rgba(226,225,226, 0.8);
 }
 .footer__logoFooter{
     /* Añadir aquí Flex y order */
+    display: flex;
+    flex-grow: 1;
 
 
+    /**/
     padding: 10px;
     margin-left: 20px;
     font-family: Helvetica, Arial,  sans-serif;
@@ -201,7 +214,11 @@
 
 .footer__info{
     /* Añadir aquí Flex y Order */
+ 
+    display: flex;
+    flex-grow: 2;
 
+    /**/
     opacity: 0.7;
     margin-left: 20px;
 }
