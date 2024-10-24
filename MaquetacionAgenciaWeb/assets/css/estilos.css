@@ -578,25 +578,61 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .service-shapes--shape1{
     /* position */
     top: -10%;
-    right: -2%;
+    right: 22%;
 }
 .service-shapes--shape2{
     /* position */
     opacity: 0.6;
+    top: 0;
+    right: 30%;
 }
 .service-shapes--shape3{
     /* position y animación */
+    opacity: 0.4;
+    top: 30%;
+    right: 25%;
+    animation: movimientoBolaRosa 10s infinite;
+}
 
+@keyframes movimientoBolaRosa{
+
+    100% {
+        transform: rotate(360deg) translateX(300px) rotate(-360deg) translateX(-300px);
+    }
+   
+  /*  0%{
+        transform: translateX(0px) translateY(0px);
+    }
+    30%{
+        transform: translateX(-50px) translateY(-350px);
+    }
+    70%{
+        transform: translateX(150px) translateY(-250px);
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+    }
+    */
 }
 
 /* Estilos para la sección de Proyectos */
+
+
+
 .layout__projects{
     /* position y z-index */
 
+    position:relative; /*hay que ponerlo como posicion sea relativa asi es el padre de su contenido*/
+    z-index: 1;
+
+
+    /**/
     background-color: var(--color-bg-projects);
     padding: 14rem 10rem;
-
+   
 }
+
+
 .projects__container{
     max-width: var(--mx-width);
     margin: 0 auto;
@@ -608,7 +644,11 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     text-transform: capitalize;
 }
 .projects__categories{
-    /* Flex */
+    /* grid */
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 3fr;
+    z-index: 1;
 
     gap: 7rem;
     margin-bottom: 5.5rem;
@@ -616,21 +656,55 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .categories__item{
     /* position */
 
+    position: relative;
+
+    /**/
+
     font-size: 2rem;
     font-weight: 500;
     cursor: pointer;
     padding: 0.8rem 0;
     /* efecto */ 
-
+    transition: all 300ms linear;
 }
 
-.projects__all{
-    /* flex */
+/*PSEUDOELEMENTO ::BEFORE*/
+/*----------TODO ESTO PARA PONER UNA LINEA DEBAJO DEL CONTENIDO.-------*/
+.categories__item::before{
+    content: "";
+    position: absolute;
+    bottom: 0.9rem;
+    height: 0.2rem;
+    left: 0;
+    width: 0%;
+    opacity: 0;
+    background-color: var(--color-primary);
+    transition: all 300ms linear;
+}
 
+.categories__item:hover::before{
+    opacity: 1;
+    width: 100%;
+}
+
+
+
+/* .categories__item--active, 
+.categories__item:hover{
+    border-bottom: 3px solid var(--color-primary);
+} */
+
+.projects__all{
+    /* grid */
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    /**/
     gap: 4rem 7rem;
 }
 .projects__project{
-    width: calc(50% - 3.5rem); /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
+    width: calc(100% - 3.5rem); /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
 }
 .project__container-img{
     width: 100%;
@@ -641,8 +715,15 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     width:100%;
     /* efecto */
 
-}
+    transition: all 2s ease-in-out;
 
+    /**/
+}
+/*se agrega el HOVER*/
+.projects__project:hover .project__img{
+    transform: scale(1.2);
+}
+/**/
 .project__content{
     padding: 4rem 5rem;
     background-color: var(--color-secondary);
@@ -655,33 +736,57 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     color: var(--color-title);
     margin-bottom: 1rem;
     /* efecto */
+    transition: all300ms linear;
 }
+
+.project__title:hover{
+    color: var(--color-banner);
+}
+
 
 .project__tags{
     font-size: 1.7rem;
 }
 .project-shapes__item{
     /* position y z-index */
+    position: absolute;
+    z-index: -1;
+    /**/
 
     pointer-events: none;
 }
 .project-shapes--shape1{
-    /* position */
-    
+    top: 4%;
+    right: 11%;
     opacity: 0.5;
 }
 .project-shapes--shape2{
-    /* position */
-
+    top: 8%;
+    right: 35%;
     opacity: 0.5;
-    /* animación */
-
+    animation: movimientoBolaRosa 40s infinite;
 }
 .project-shapes--shape3{
-    /* position */
-
+    top: 90px;
+    right: 200px;
     opacity: 0.8;
-    /* animación */
+    animation: movimientoBolaRosa 40s infinite;
+    -webkit-animation: moveProjectShape 40s infinite;
+}
+
+@keyframes moveProjectShape{
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    35%{
+        transform: translateX(150px) translateY(-50px);
+    }
+    70%{
+        transform: translateX(-50px) translateY(100px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
 }
 
 /* Estilos para estadísticas y Mejores clientes */
@@ -712,18 +817,29 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     color: var(--color-text-description);
 }
 .stats__progress{
-    /* Flex */
+    /* GRID */
     
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /**/
+
     gap: 3rem;
 }
 .stats__stat{
-    width: 25%;
+    /* width: 25%; */
     text-align: center;
     padding: 7rem 2rem;
     border-radius: 2rem;
     border: 1px solid transparent; /* inapreciable */
 }
 /* efecto */
+
+.stats__stat:hover{
+    background: linear-gradient(180deg,var(--color-bg-dark), var(--color-hover-dark));
+    border: 1px solid var(--color-hover-dark);
+}
+
+/**/
 
 .stat__icon>img{
     margin: 0 auto;
@@ -748,12 +864,16 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 /* Estilos para Reseñas */
 .layout__reviews{
     /* position y z-index */
+    /*PADRE*/
+    position: relative;
+    z-index: 1;
 
+    /**/
     padding-top: 7rem;
     padding-bottom: 5rem;
 }
 .reviews__container{
-    /* Flex */
+    /* GRID */
 
     max-width: var(--mx-width);
     margin: 0 auto;
@@ -770,13 +890,22 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     font-size: 2rem;
 }
 .reviews__content{
-    /* Flex + align */
-
+    /* grid + align */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    /**/
+    
     gap: 2rem;
 }
 .reviews__review{
     padding-top: 2rem;
     padding-bottom: 2rem;
+
+    /*----grid para las cajas----*/
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 .review__company{
     display: inline-block;
@@ -789,13 +918,15 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     margin-bottom: 4rem;
 }
 .review__author{
-    /* Flex */
-
+    /* GRID */
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    /**/
 }
 .author__container-img{
     border-radius: 90px;
     overflow: hidden;
-    width:10%;
+    /* width:10%; */
 }
 .author__name{
     display: block; /* creo un salto de línea */
@@ -815,6 +946,16 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .review-shapes__item{
     /* position + z-index */
     pointer-events: none;
+    
+    /*-----position----*/
+
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    right: 14%;
+    opacity: 0.5;
+    animation: movimientoBolaRosa 40s infinite;
+    /**/
 }
 
 /* Estilos zona Mejores Clientes */
