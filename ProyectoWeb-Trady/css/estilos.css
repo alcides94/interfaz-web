@@ -29,16 +29,16 @@
  definimos familia de fuente que voy a utilizar */
 :root{
     --mx-width: 1240px;
-    --color-primary: #37bcf9;
-    --color-secondary: #fff;
-    --color-backgroung: #ccc;
-    --color-bg: black;
+    --color-primary: #c0a591;
+    --color-secondary: #d4a683;
+    --color-backgroung: white;
+    --color-letter: black;
     --color-text-white: white;
     --color-text-title: #00538c;
     --color-grey: gray;
     --color-box-shadow: #ddd;
     --color-box-shadow2: #393d3f;
-    --color-focus: #555;
+    --color-focus: #F5F5F5;
 }
 
 /* Estilos Generales */
@@ -50,7 +50,7 @@ html{
     overflow-x: hidden;
 }
 body{
-    background: url("../img/pattern.png");
+    background-color: white;
 }
 /* wrap queremos que los elementos "hijos" dispongan de estos estilos */
 .header__wrap, .content__wrap, .footer__wrap{
@@ -65,16 +65,22 @@ body{
 
 /* Cabecera */
 .header{
-  
+    display: grid;
     width: 100%;
     height: 70px;
-    background-color: var(--color-bg);
-    font-family: "BebasNeue";
+    background-color: var(--color-primary);
+    font-family: "Arial";
+    
     color: var(--color-text-white);
 }
 
+.header__wrap{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
 .header__logo{
-    float: left;
+    display: grid;
+    grid-template-columns: 30% 70%;
     width: 200px;
     height: 50px;
     background-color: var(--color-primary);
@@ -88,11 +94,21 @@ body{
     transition: all 500ms;
 }
 
+.header__logo img{
+    width: 160%;
+    height: 100%;
+        
+}
+
+.header__logo:hover img{
+    animation: mueveDerecha 1.5s;
+}
+
 .header__logo h3{
-    display: block;
-   float: right;
-    font-size: 40px;
-    margin-right: 65px;
+    /*display: grid;*/
+    /* float: right; */
+    font-size: 30px;
+    margin-left: 3px;
     /* transición */
     transition: all 500ms;
 }
@@ -115,11 +131,12 @@ body{
 /* efecto hover en Logo */
 .header__logo:hover{
     border-radius: 5%;
-    background-color: var(--color-backgroung);
-    color: black;
+    background-image: url(../img/plano-historico-de-malaga-1300px\ \(1\).jpg);
+    background-size: cover;
+    color: green;
     
 }
-
+/*
 .logo__gear{
     display: block;
     float: left;
@@ -127,23 +144,24 @@ body{
     margin-top: 4px;
     margin-left: 26px;
 
-    /* A la hora de crear animación */
+    /* A la hora de crear animación 
     animation-name: giroRueda;
     animation-duration: 4s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-
+    */
     /*equivalente a */
-    /*animation: girarRueda 4s linear infinite;*/
+    /*animation: girarRueda 4s linear infinite;
 }
-
+*/
 /* animación logo rueda */
+/*
 @keyframes giroRueda {
     100%{
         transform: rotate(360deg);
     }
 }
-
+*/
 /* efecto de desaparece y vuelve keyframes */
 
 .header__logo:hover .logo__gear{
@@ -163,28 +181,43 @@ body{
 
 
 .header__menu{
-    float: right;
-    height: 70px;
+    display: grid;
     background: transparent;
 }
+
+.menu__list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr 1fr 1fr;
+}
+
+
+
 .list__item{
-    font-size: 24px;
-    display: inline-block; /* puedo flotar con el float o bien mediante inline-block. Funcionaría igual */
+    display:grid;
+    font-size: 20px;
+    text-align: center;
     margin: 0px 20px 0px 20px;
     letter-spacing: 1px;
     line-height: 70px;
 }
 .list__item a{
-    display:block;
+   /*display:grid;*/
+   
     color: var(--color-text-white);
     text-decoration: none;
+  
+    transition: all 500ms;
     /* transición */
 }
 /* hover */
-.list__item:hover a{
-    color: var(--color-text-title);
-    
+.list__item a:hover{
+    color: green;
+  
 }
+
+
+
+
 /* Maquetando el Banner */
 .content__banner{
     width: 95.5%;

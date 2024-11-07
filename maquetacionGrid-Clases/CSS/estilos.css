@@ -36,6 +36,9 @@
     font-weight: 900; /* texto gordito */
     font-size: 35px;
 }
+
+/*-------------MENU-----------*/
+
 .container__menu{
     height: 100%; /* que ocupe toda la altura */
     padding-right: 20px;
