@@ -29,7 +29,7 @@
  definimos familia de fuente que voy a utilizar */
 :root{
     --mx-width: 1240px;
-    --color-primary: #c0a591;
+    --color-primary: #e4ccb8;
     --color-secondary: #d4a683;
     --color-backgroung: white;
     --color-letter: black;
@@ -218,13 +218,13 @@ body{
 /* Maquetando el Banner */
 .content__info{
     display: grid;
-    grid-template-rows: 50% 50%;
+    /*grid-template-rows: 50% 50%;*/
 }
 
 .content__banner{
     
     width: 100%;
-    height: 300px;
+    height: 200px;
     border: var(--color-text-white);
     box-shadow: 0px 0px 2px var(--color-gray);
     background: url("../img/malaga.gif");
@@ -289,18 +289,19 @@ body{
 
 
 .cards__card{
+    
     display: grid;
-    grid-template-rows: 70% 15% 15%;
+    grid-template-rows: 60% 10% 30%;
     background-color: white;
     width: 200px;
     height: 260px;
-    border: 1px solid var(--color-backgroung);
+    border: 8px solid white;
     box-shadow: 1px 1px 4px var(--color-box-shadow);
     overflow: hidden;
     margin: 22px;
     margin-top: 40px;
     cursor: pointer;
-    
+    border-radius: 2%;
     /* transicion */
     transition: all 500ms;
 }
@@ -310,7 +311,7 @@ body{
 /*    color: white;*/
 }
 .cards__card:hover .card__icon{
-    font-size: 60px;
+    /*font-size: 60px;*/
     color: grey;
     animation: mueveIcono 500ms linear;
 }
@@ -351,6 +352,7 @@ body{
     width: 100%;
     height: 100%;
     color: gray;
+    font-size: 1.5rem;
 }
 
 .cards__card .card__icon{
@@ -388,21 +390,30 @@ body{
 /* efecto de hover en la carta. tocamos card__description */
 
 
-.clearfix{
+/*.clearfix{
     float: none;
     clear: both;
+}*/
+
+/* ------------CONTENEDOR DE CUERPO----------*/
+
+.content__cuerpo{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    background-color: var(--color-primary);
+    padding-left: 4%;
 }
 
-/* Barra lateral */
+/* -----------------------Barra lateral------------ */
 .content__lateral{
-    width: 300px;
+    width: 100%;
     min-height: 1070px;
-    font-family: "TrebuchetMS";
-    float: right;
-    margin: 20px;
+    font-family: "Arial";
+    /* float: right; */
+    /* margin: 20px; */
 }
 .lateral__title{
-    display: block;
+    /* display: block; */
     width: auto;
     height: 45px;
     line-height: 49px;
@@ -604,28 +615,52 @@ body{
 
 /* Artículos */
 .content__articles{
-    float: left; /* es necesario flotarlo puesto que he incluido el div clearfix*/
+    /* float: left; es necesario flotarlo puesto que he incluido el div clearfix */
     width: 860px;
 }
 
 .content__articles h2{
-    display: block;
+    
     width: 100%;
-    height: 75px;
-    line-height: 75px; /* centra el texto */
-    text-align: center;
+    /* height: 75px; */
+   /* line-height: 75px;  centra el texto */
+    text-align: left;
+    /* padding-left: 2%; */
     font-family: "BebasNeue";
-    font-size: 40px;
+    font-size: 4rem;
     font-weight: normal;
     letter-spacing: 2px;
-    background: url("../img/pxgray.png"), var(--color-text-white);
-    box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
+   /* background: url("../img/pxgray.png"), var(--color-text-white);*/
+    /*box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
+    */
     margin: 0px auto;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    /* margin-bottom: 15px; */
+}
+
+.content__articles h3{
+    
+    width: 100%;
+    /* height: 75px; */
+   /* line-height: 75px;  centra el texto */
+    text-align: left;
+    /* padding-left: 2%; */
+    font-family: "BebasNeue";
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+    color: gray;
+   /* background: url("../img/pxgray.png"), var(--color-text-white);*/
+    /*box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
+    */
+    margin: 0px auto;
+    /* margin-top: 20px; */
     margin-bottom: 15px;
 }
 
 .articles__article{
+    display: grid;
+    grid-template-columns: 20% 80%;
     width: 98%;
     height: auto;
     border: 1px solid var(--color-backgroung);
