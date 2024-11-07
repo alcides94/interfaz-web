@@ -1,0 +1,4 @@
+Que es un Preprocesasdor: Transpila de una extencion a otro
+    te convierte una extencion de .scss a .css
+
+ 

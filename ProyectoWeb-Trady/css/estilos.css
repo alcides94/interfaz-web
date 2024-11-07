@@ -215,25 +215,29 @@ body{
   
 }
 
-
-
-
 /* Maquetando el Banner */
+.content__info{
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
 .content__banner{
-    width: 95.5%;
-    height: 100px;
-    border: 10px solid var(--color-text-white);
+    
+    width: 100%;
+    height: 300px;
+    border: var(--color-text-white);
     box-shadow: 0px 0px 2px var(--color-gray);
-    background: url("../img/bakbaner.png");
-    background-position: -200px -200px;
-    margin: 20px auto;
+    background: url("../img/malaga.gif");
+    background-position: 0px 0px;
+    margin: 0px auto;
     overflow: hidden;
+    
     /* animación */
-    animation: fondoBanner 10s infinite linear;
+   /* animation: fondoBanner 10s infinite linear;*/
 }
 
 /* keyframes */
-@keyframes fondoBanner {
+/*@keyframes fondoBanner {
     0%{
         background-position: 0px 0px;
     }
@@ -241,7 +245,7 @@ body{
         background-position: -200px -200px;
     }
 }
-
+*/
 .content__banner h1{
     display: block;
     width: 850px;
@@ -276,8 +280,18 @@ body{
 }
 
 /* Tarjetas */
+
+.content__cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: #d4a683;
+}
+
+
 .cards__card{
-    float: left;
+    display: grid;
+    grid-template-rows: 70% 15% 15%;
+    background-color: white;
     width: 200px;
     height: 260px;
     border: 1px solid var(--color-backgroung);
@@ -286,17 +300,18 @@ body{
     margin: 22px;
     margin-top: 40px;
     cursor: pointer;
+    
     /* transicion */
     transition: all 500ms;
 }
 /*efecto hover en las cartas */
 .cards__card:hover{
-    background-color: var(--color-bg);
+   /* background-color: var(--color-bg);*/
 /*    color: white;*/
 }
 .cards__card:hover .card__icon{
     font-size: 60px;
-    color: var(--color-primary);
+    color: grey;
     animation: mueveIcono 500ms linear;
 }
 @keyframes mueveIcono {
@@ -310,12 +325,12 @@ body{
 
 .cards__card:hover .card__category{
    
-    color: var(--color-secondary);
+    color: grey;
     animation: mueveText 500ms linear;
 }
 .cards__card:hover .card__description{
    
-    color: var(--color-secondary);
+    color: grey;
     animation: mueveText 500ms linear;
 }
 @keyframes mueveText {
@@ -331,14 +346,21 @@ body{
     margin-right: 0px;
 }
 
-.cards__card .card__icon{
-    display: block;
+.cards__card h2{
+    display: grid;
     width: 100%;
-    height: 110px;
+    height: 100%;
+    color: gray;
+}
+
+.cards__card .card__icon{
+    display: grid;
+    width: 100%;
+    height: 100%;
     font-size: 50px;
     line-height: 90px;
     text-align: center;
-    margin: 0px auto;
+    /*margin: 10px 10px 10px 10px;*/
 }
 /*efecto hover en la carta modificamos card__icon */
 
@@ -346,7 +368,7 @@ body{
 
 .card__category{
     width: 100%;
-    height: 50px;
+    height: 100%;
     font-family: "TrebuchetMS";
     font-size: 21px;
     font-weight: bold;

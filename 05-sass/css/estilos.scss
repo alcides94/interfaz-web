@@ -1,0 +1,36 @@
+//variables
+$color-fondo:#ccc;
+$color-fondo2:lightblue;
+$color-letra:black;
+$color-letra2:blue;
+
+
+//variable asociadas a un selector
+
+$b:'body';
+
+#{$b}{
+    background-color: $color-fondo;
+}
+
+h1{
+    color: $color-letra2;
+}
+.caja{
+    border: 1px solid black;
+    margin: 0 auto;
+    text-align: center;
+
+    background-color: $color-fondo2;
+    padding: 10px;
+    h2{
+        color: $color-letra2;
+    }
+    .info{
+        border: 1px solid black;
+        background-color: $color-fondo;
+        h3{
+            color: green;
+        }
+    }
+}
