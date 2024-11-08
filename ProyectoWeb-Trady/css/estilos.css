@@ -407,6 +407,7 @@ body{
 /* -----------------------Barra lateral------------ */
 .content__lateral{
     width: 100%;
+    height: 100%;
     min-height: 1070px;
     font-family: "Arial";
     /* float: right; */
@@ -616,7 +617,7 @@ body{
 /* Artículos */
 .content__articles{
     /* float: left; es necesario flotarlo puesto que he incluido el div clearfix */
-    width: 860px;
+    width: 100%;
 }
 
 .content__articles h2{
@@ -658,8 +659,17 @@ body{
     margin-bottom: 15px;
 }
 
-/*-----------ARTICULOS --------------*/
 
+/*-----------ARTICULOS --------------*/
+.article__img{
+    padding: 5px;
+    margin: 5px;
+    height: 100%;
+}
+.article__img img{
+    
+    height: 95%;
+}
 .articles__article{
     display: grid;
     grid-template-columns: 20% 80%;
@@ -668,7 +678,7 @@ body{
     border: 1px solid var(--color-backgroung);
     margin: 10px auto;
     padding: 10px;
-    font-family: "TrebuchetMS";
+    font-family: "Arial";
     background: var(--color-text-white);
     color: var(--color-bg);
     box-shadow: 1px 1px 2px var(--color-box-shadow);
@@ -678,12 +688,12 @@ body{
     /*float: right;*/
     /*background-color: var(--color-box-shadow2);*/
     display: grid;
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 20% 60% 20%;
     /*color: var(--color-text-white);*/
     /*height: 30px;*/
     line-height: 30px;
-    margin: -10px;
-    padding: 4px;
+    margin: 0px;
+    padding: 5px;
     font-size: 13px;
     border-radius: 0px 0px 0px 5px; /* esquina inferior izq 5px */
 }
@@ -708,8 +718,14 @@ body{
 .article__datos p{
     /*margin-top: 10px;*/
     /*margin-bottom: 10px;*/
-    font-size: 15px;
+    font-size: 10px;
     color: gray;
+}
+
+.article__button{
+    height: auto;
+    width: 50px;
+    font-size: 100%;
 }
 /*-----------ESTILO DEL ULTIMO BOTON-------------*/
 .articles__blog{
