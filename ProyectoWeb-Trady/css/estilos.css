@@ -658,13 +658,15 @@ body{
     margin-bottom: 15px;
 }
 
+/*-----------ARTICULOS --------------*/
+
 .articles__article{
     display: grid;
     grid-template-columns: 20% 80%;
     width: 98%;
     height: auto;
     border: 1px solid var(--color-backgroung);
-    margin: 40px auto;
+    margin: 10px auto;
     padding: 10px;
     font-family: "TrebuchetMS";
     background: var(--color-text-white);
@@ -672,8 +674,22 @@ body{
     box-shadow: 1px 1px 2px var(--color-box-shadow);
 }
 
+.article__datos{
+    /*float: right;*/
+    /*background-color: var(--color-box-shadow2);*/
+    display: grid;
+    grid-template-rows: 20% 80%;
+    /*color: var(--color-text-white);*/
+    /*height: 30px;*/
+    line-height: 30px;
+    margin: -10px;
+    padding: 4px;
+    font-size: 13px;
+    border-radius: 0px 0px 0px 5px; /* esquina inferior izq 5px */
+}
+
 .articles__article h4{
-    display: block;
+    /*display: block;*/
     font-size: 23px;
     margin: 3px;
 }
@@ -685,27 +701,17 @@ body{
     text-decoration: underline;
 }
 
-.article__datos{
-    float: right;
-    background-color: var(--color-box-shadow2);
-    color: var(--color-text-white);
-    height: 30px;
-    line-height: 30px;
-    margin: -10px;
-    padding: 4px;
-    font-size: 13px;
-    border-radius: 0px 0px 0px 5px; /* esquina inferior izq 5px */
-}
-.article__datos span{
+/*.article__datos span{
     margin: 6px;
-}
+}*/
 
 .article__datos p{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /*margin-top: 10px;*/
+    /*margin-bottom: 10px;*/
     font-size: 15px;
+    color: gray;
 }
-
+/*-----------ESTILO DEL ULTIMO BOTON-------------*/
 .articles__blog{
     height: 100px;
     margin-top: 60px;
