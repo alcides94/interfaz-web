@@ -24,9 +24,7 @@
     font-style: normal;
 }
 
-/* Iniciamos estilos personalizados  */
-/* Definición Variables
- definimos familia de fuente que voy a utilizar */
+
 :root{
     --mx-width: 1240px;
     --color-primary: #e4ccb8;
@@ -43,16 +41,14 @@
 
 /* Estilos Generales */
 html{
-    /* para un tema de accesibilidad y poder trabajar con rem */
-    /* font-size: 10px; */
-    /* Accesibilidad,... si el usuario nos cambia el tamaño de fuente */
+
     font-size: 62.5%;
     overflow-x: hidden;
 }
 body{
     background-color: white;
 }
-/* wrap queremos que los elementos "hijos" dispongan de estos estilos */
+
 .header__wrap, .content__wrap, .footer__wrap{
     /* le asignamo 1200 para vista de escritorio */
     width: var(--mx-width);
@@ -95,8 +91,8 @@ body{
 }
 
 .header__logo img{
-    width: 160%;
-    height: 100%;
+    width: 120%;
+    height: 80%;
         
 }
 
@@ -105,8 +101,7 @@ body{
 }
 
 .header__logo h3{
-    /*display: grid;*/
-    /* float: right; */
+    
     font-size: 30px;
     margin-left: 3px;
     /* transición */
@@ -136,32 +131,29 @@ body{
     color: green;
     
 }
-/*
-.logo__gear{
-    display: block;
-    float: left;
-    font-size: 30px;
-    margin-top: 4px;
-    margin-left: 26px;
+.trady__animado{
+   /* display: block;*/
+    width: 30px;
+    height: 40px;
+    left: 200px;
 
-    /* A la hora de crear animación 
-    animation-name: giroRueda;
-    animation-duration: 4s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    */
-    /*equivalente a */
-    /*animation: girarRueda 4s linear infinite;
+    
+    animation: tradyCorriendo 10s linear;
 }
-*/
+
 /* animación logo rueda */
-/*
-@keyframes giroRueda {
+
+@keyframes tradyCorriendo {
+    0%{
+        transform: translateX(4000%) ;
+        
+    }
+   
     100%{
-        transform: rotate(360deg);
+        transform: translateX(0%) ;
     }
 }
-*/
+
 /* efecto de desaparece y vuelve keyframes */
 
 .header__logo:hover .logo__gear{
@@ -222,7 +214,7 @@ body{
 }
 
 .content__banner{
-    
+    position: relative;
     width: 100%;
     height: 200px;
     border: var(--color-text-white);
@@ -232,20 +224,9 @@ body{
     margin: 0px auto;
     overflow: hidden;
     
-    /* animación */
-   /* animation: fondoBanner 10s infinite linear;*/
+
 }
 
-/* keyframes */
-/*@keyframes fondoBanner {
-    0%{
-        background-position: 0px 0px;
-    }
-    100%{
-        background-position: -200px -200px;
-    }
-}
-*/
 .content__banner h1{
     display: block;
     width: 850px;
@@ -305,10 +286,9 @@ body{
     /* transicion */
     transition: all 500ms;
 }
-/*efecto hover en las cartas */
+
 .cards__card:hover{
-   /* background-color: var(--color-bg);*/
-/*    color: white;*/
+
 }
 .cards__card:hover .card__icon{
     /*font-size: 60px;*/
@@ -319,9 +299,7 @@ body{
     from{
         transform: translateY(-100%);
     }
-    /* to{
-        transform: translateY(0%);
-    } */
+  
 }
 
 .cards__card:hover .card__category{
@@ -338,9 +316,7 @@ body{
     from{
         transform: translateY(-100%);
     }
-    /* to{
-        transform: translateY(0%);
-    } */
+  
 }
 
 .cards__card:last-child{
@@ -364,9 +340,7 @@ body{
     text-align: center;
     /*margin: 10px 10px 10px 10px;*/
 }
-/*efecto hover en la carta modificamos card__icon */
 
-/* keyframes */
 
 .card__category{
     width: 100%;
@@ -387,13 +361,6 @@ body{
     font-size: 14px;
     /* transición */
 }
-/* efecto de hover en la carta. tocamos card__description */
-
-
-/*.clearfix{
-    float: none;
-    clear: both;
-}*/
 
 /* ------------CONTENEDOR DE CUERPO----------*/
 
@@ -408,29 +375,29 @@ body{
 .content__lateral{
     width: 100%;
     height: 100%;
-    min-height: 1070px;
+    /*min-height: 1070px;*/
     font-family: "Arial";
-    /* float: right; */
-    /* margin: 20px; */
+ 
 }
 .lateral__title{
     /* display: block; */
     width: auto;
     height: 45px;
-    line-height: 49px;
-    background: url("../img/pxgray.png"), var(--color-text-white);
-    box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
-    font-size: 30px;
-    font-family: "BebasNeue";
+  font-size: 2rem;
+    
+    font-family: "Arial";
     font-weight: normal;
-    letter-spacing: 2px;
+    /*letter-spacing: 2px;*/
     padding-left: 15px;
     margin-top: 30px;
     margin-bottom: 15px;
+    
 }
 
 .lateral__title:first-child{
-    margin-top: 0px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-style: italic;
 }
 .lateral__search{
     width: 90%;
@@ -438,26 +405,24 @@ body{
     margin: 10px auto;
     background-color: var(--color-text-white);
     border: 1px solid var(--color-backgroung);
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 1px 1px 4px var(--color-backgroung) inset;
 }
 
 .lateral__search input[type="text"]{
-    width: 85%; /* para que quepa el botón */
+    width: 85%; 
     height: 30px;
     border: none;
     padding-left: 5px;
-    border-radius: 5px;
-    background-color: transparent;
-    color: var(--color-backgroung);
-    /*para cambiar el foco*/
-    /* transición para el focus */
+    border-radius: 20px;
+    color: var(--color-box-shadow2);
+    background-color: var(--color-backgroung);
+
     transition: all 300ms;
 }
-/*------------------------para cambiar el foco*/
-/* obtengo foco en input[type="text"] */
+
 .lateral__search input[type="text"]:focus{
-    font-weight: 700;
+  
     color: var(--color-box-shadow2);
     background-color: var(--color-backgroung);
 }
@@ -467,15 +432,16 @@ body{
     height: 30px;
     cursor:pointer;
     font-size: 16px;
-    background-color: transparent; /* para que no tenga fondo */
-    border:none; /* para que se integre con el campo en sí */
+
+    border:none; 
     border-left: 1px solid var(--color-backgroung);
-    color: var(--color-focus);
+    color: var(--color-box-shadow2);
+    background-color: var(--color-backgroung);
     padding-left: 6px;
 }
 .aside-box{
     width: 85%;
-    height: 240px;
+    height: 200px;
     margin: 0px auto;
     margin-top: 20px;
     padding-top: 2px;
@@ -483,136 +449,44 @@ body{
     box-shadow: 0px 0px 1px rgba(0,0,0,0.3), 0px 3px 7px rgba(0,0,0,0.3), 0px 1px var(--color-text-white) inset, 0px -3px 2px rgba(0,0,0,0.3) inset;
 }
 
-.lateral__login input[type="email"],
-.lateral__login input[type="password"]{
-    display: block;
-    margin: 0px auto;
-    margin-top: 20px;
-    width: 82%;
-    height: 30px;
-    border: 1px solid var(--color-backgroung);
-    box-shadow: 1px 1px 1px var(--color-backgroung) inset;
-    border-radius: 5px;
-    padding-left: 30px;
-    color: var(--color-gray);
+.lateral__scoring h3 {
+    border-bottom: 1px solid grey;
+    color: black;
+    margin: 0 auto;
+    width: 80%; 
+    padding: 0;
+    margin-bottom: 5px;
+    height: 3rem;
 }
-.lateral__login input[type="email"]:focus,
-.lateral__login input[type="password"]:focus{
-    color: var(--color-focus);
-    box-shadow: 1px 1px 1px var(--color-gray) inset;
-}
-
-.lateral__login .lateral-box__user,
-.lateral__login .lateral-box__password{
-    display: block;
-    text-align: center;
-    position: absolute;
+.lateral__scoring h5{
     margin-left: 30px;
-    margin-top: 6px;
-    height: 30px;
 }
-.lateral__login .lateral-box__password{
+.lateral__scoring p{
     margin-left: 30px;
-    margin-top: 22px;
-    font-size: 20px;
 }
-
-.lateral__login input[type="submit"],
-.lateral__login input[type="button"],
-.lateral__login input[type="reset"],
-.lateral__login button{
-    /* display: block; */
-    float: left;
-    text-align: center;
-    width: 100px;
-    height: 35px;
-    margin-top: 20px;
-    color: var(--color-text-white);
-    /* Degradado desde abajo - to bottom --> hacia arriba */
-    background: linear-gradient(to bottom, #3eb8e5 0%, #2ca0ca 100%);
-    border: 1px solid #156785;
-    border-radius: 0px;
-    cursor: pointer;
-    font-size: 15px;
-    font-family: "TrebuchetMS";
-    margin-left: 17px;
-    margin-bottom: 20px;
-    /* transición */ 
-    transition: all 30ms;
-}
-.lateral__login input[type="submit"]:hover,
-.lateral__login input[type="button"]:hover,
-.lateral__login input[type="reset"]:hover,
-.lateral__login button:hover{
-    /* le incluyo una sombra */
-    box-shadow: 5px 4px 38px -1px rgba(0,0,0,0.75);
-}
-
-.lateral__login a{
-    display: block;
-    text-decoration: none;
-    margin-left: 18px;
-    font-size: 14px;
-    color: var(--color-focus);
-}
-
-/* efecto en el .lateral__login a mediante hover */
-
-
-.lateral__social{
-    height: 220px;
-}
-
-.lateral__social a{
-    display: block;
-    color: var(--color-bg);
-    text-decoration: none;
-    font-size: 30px;
-    margin-left: 20px;
+.lateral__sponsors h4 {
+    margin-left: 30px;
     margin-top: 10px;
-    margin-bottom: 20px;
 }
 
-.lateral__social .social__overlay{
-    display: block;
-    height: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-shadow: 0px 0px 1px var(--color-backgroung);
-    border: 3px solid var(--color-text-white);
-    box-shadow: 0px 0px 4px var(--color-backgroung);
-    background: #F4F7FE;
-    position: absolute;
-    padding: 5px;
-    margin-left: 70px;
-    margin-top: -52px;
-    cursor: pointer;
-    transform: translateX(-80%); /*lo desplazo para que cuando se lance el hover se vea el movimiento de la traslación*/
-    opacity: 0; /*lo oculto*/
-    /* transición el cambio */
-    transition: all 1s;
+.lateral__sponsors h3 {
+    border-bottom: 1px solid grey;
+    color: black;
+    margin: 0 auto;
+    width: 80%; 
+    padding: 0;
+    margin-bottom: 5px;
+    height: 3rem;
 }
-/* efecto hover sobre el div de lateral__social */
-.lateral__social div:hover .social__overlay{
-    transform: translateX(0%);
-    opacity: 1;
-
+.lateral__google h3 {
+    border-bottom: 1px solid grey;
+    color: black;
+    margin: 0 auto;
+    width: 80%; 
+    padding: 0;
+    margin-bottom: 5px;
+    height: 3rem;
 }
-
-/* --------OTRA FORMA-------*/
-/*.social__box:hover .social__overlay{
-    transform: translateX(10%);
-    opacity: 1;
-}
-     --------OTRA FORMA-------
-.lateral__social .social__overlay:hover{
-    opacity: 1;
-    transform: translateX(0);
-}
-
-
-*/
 
 /* Artículos */
 .content__articles{
@@ -623,20 +497,16 @@ body{
 .content__articles h2{
     
     width: 100%;
-    /* height: 75px; */
-   /* line-height: 75px;  centra el texto */
+
     text-align: left;
     /* padding-left: 2%; */
-    font-family: "BebasNeue";
+    font-family: "Arial";
     font-size: 4rem;
-    font-weight: normal;
+    /*font-weight: normal;*/
     letter-spacing: 2px;
-   /* background: url("../img/pxgray.png"), var(--color-text-white);*/
-    /*box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
-    */
+   
     margin: 0px auto;
-    /* margin-top: 20px; */
-    /* margin-bottom: 15px; */
+
 }
 
 .content__articles h3{
@@ -648,12 +518,10 @@ body{
     /* padding-left: 2%; */
     font-family: "BebasNeue";
     font-size: 2rem;
-    font-weight: normal;
+    /*font-weight: normal;*/
     letter-spacing: 2px;
     color: gray;
-   /* background: url("../img/pxgray.png"), var(--color-text-white);*/
-    /*box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
-    */
+ 
     margin: 0px auto;
     /* margin-top: 20px; */
     margin-bottom: 15px;
@@ -685,21 +553,18 @@ body{
 }
 
 .article__datos{
-    /*float: right;*/
-    /*background-color: var(--color-box-shadow2);*/
+
     display: grid;
     grid-template-rows: 20% 60% 20%;
-    /*color: var(--color-text-white);*/
-    /*height: 30px;*/
-    line-height: 30px;
+  
     margin: 0px;
     padding: 5px;
-    font-size: 13px;
+    font-size: 1rem;
     border-radius: 0px 0px 0px 5px; /* esquina inferior izq 5px */
 }
 
 .articles__article h4{
-    /*display: block;*/
+   
     font-size: 23px;
     margin: 3px;
 }
@@ -711,14 +576,11 @@ body{
     text-decoration: underline;
 }
 
-/*.article__datos span{
-    margin: 6px;
-}*/
 
 .article__datos p{
-    /*margin-top: 10px;*/
-    /*margin-bottom: 10px;*/
-    font-size: 10px;
+
+    margin-top: 10px;
+    font-size: 1rem;
     color: gray;
 }
 
@@ -726,8 +588,11 @@ body{
     height: auto;
     width: 50px;
     font-size: 100%;
+    font-size: 1.2rem;
+    background-color: rgb(115, 175, 115);
+    border-color:  rgb(115, 175, 115);
 }
-/*-----------ESTILO DEL ULTIMO BOTON-------------*/
+
 .articles__blog{
     height: 100px;
     margin-top: 60px;
@@ -747,9 +612,9 @@ body{
     transition: all 500ms ease-in-out;
 }
 
-/*PREGUNTARRRRR*/
 
-/* efecto de hover sobre articles__blog */
+
+
 .articles__blog:hover a{
     color: var(--color-text-white);
     text-shadow: 1px 1px 1px var(--color-bg),1px 2px 1px var(--color-bg),1px 3px 1px var(--color-bg),1px 4px 1px var(--color-bg),1px 5px 1px var(--color-bg),1px 6px 1px var(--color-bg);
@@ -778,66 +643,152 @@ body{
           border: 10px solid var(--color-primary);
       }
   }
+/*TEAMS*/
+.content__team{
+    /*margin: 0px auto;*/
+    background-color: var(--color-secondary);
+    
+}
+.cards__team{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 10%;
+}
 
+
+
+.content__team h2{
+    margin-left: 5%;
+    width: 100%;
+    text-align: left;
+    font-family: "Arial";
+    font-size: 4rem;
+   /* margin: 0px auto;*/
+   letter-spacing: 2px;
+   color: black;
+
+}
+
+.content__team h3{
+    margin-left: 5%;
+    width: 100%;
+    text-align: left;
+    font-family: "BebasNeue";
+    font-size: 2rem;
+    color: gray;
+   /* margin: 0px auto;*/
+   letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+.cards__team .cards__card{
+    display: grid;
+    grid-template-rows: 30% 70%;
+    border-radius: 5%;
+    width: 70%;
+    height: 150px;
+}
+
+.cards__team .card__category{
+    color: black;
+    font-size: 2rem;
+}
+
+.category__info{
+    display: grid;
+    grid-template-columns: 30% 70%;   
+}
+
+.category__info .card__icon{
+    height: 70%;
+    border-radius: 100%;
+}
+
+.category__info .info__team{
+    display: grid;
+    grid-template-rows: 40% 60%;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height:1;
+
+}
 /* FOOTER */
 .content__footer{
+    margin: 0 auto;
     width: 100%;
     height: 470px;
-    background-color: black;
+    background-color: var(--color-primary);
     color: var(--color-text-white);
     overflow: hidden;
-}
-.footer__wrap > div{
-    float: left;
-    width: 25%;
-    height: 370px;
-    margin: 40px;
-    text-align: center;
-    color: var(--color-text-white);
-    font-family: "TrebuchetMS";
 }
 
 .content__footer a{
     text-decoration: none;
-    color: var(--color-primary);
-    /* transición */
+    color: black;
+  
     transition: all 300ms;
 }
+.footer__wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+ 
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-.footer__list li:hover a{
-    margin-left: 40px;
-    /*padding-left:40px*/
-    color: var(--color-text-white);
-    width: 100%;
+.footer__redes{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 40px;
+
+}
+
+.footer__redes img{
+   height: 30%;
+   width: 60%;
+   margin: 0 auto;
+}
+
+
+.footer__menuFooter{
+    display: grid;
+    grid-template-rows: 20% 80%;
 }
 
 .footer__title{
-    display: block;
-    background: url("../img/pxgray.png"), var(--color-text-white);
-    height: 50px;
-    letter-spacing: 2px;
+    
+
     text-align: center;
-    font-family: "BebasNeue";
-    font-size: 40px;
-    line-height: 55px;
+    font-family: "Arial";
+    font-size: 3rem;
+    /*line-height: 55px;*/
     color: black;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    /*border-radius: 5px;*/
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 .footer__list{
+    
     text-align: left;
-    margin: 20px;
-    font-size: 25px;
+    margin: 5px;
+    font-size: 2rem;
 }
 .footer__list li{
-    margin-top: 10px;
+    margin-top: 2   px;
     padding: 5px;
-    border-bottom: 1px solid var(--color-backgroung);
+    color: black;
+
+}
+.footer__list li:hover a{
+    margin-left: 40px;
+  
+    color: green;
+    width: 100%;
 }
 .footer__list li a{
     display: block;
     height: 40px;
-    /* transición */
+
 }
 /* efecto de hover sobre cada li */
 
@@ -858,9 +809,58 @@ body{
     width: 45px;
 }
 
-/* Animaciones y Transiciones
-- Propiedad Animation
-- Keyframes
-- Transitions 
+.footer__redes ul li {
+    height: 5rem;
+    width: 5rem;
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+ }
+ .footer__redes ul li img {
+    height: 60%;
+    width: 3rem;
+    padding: 0;
+    margin: 0;
+    
+ }
+.form__container{
 
-Indico cada punto aplicado como efecto*/
+    border-radius: 10px;
+}
+
+.fleft__form{
+    text-align: left;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr 1fr;
+}
+
+
+.form__form-control{
+ 
+    padding: 5px;   
+    height: auto;
+    border: none;
+    outline: none;
+    color: var(--color-title);
+    margin-left: 1rem;
+    border-radius: 10px;
+    border: 1px solid grey;
+    margin-bottom: 5px;
+}
+.form__btn{
+    cursor: pointer;
+    height: 5.2rem;
+    border: none;
+    outline: none;
+    background-color: var(--color-primary);
+    color: black;
+    border-radius: 16px;
+    padding: 1rem 3rem;
+
+    transition: all 500ms ease-in-out;
+}
+
+
