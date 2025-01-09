@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./asset/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#recorrer').on("click", function () {
+                $('input').each(function () {
+                alert($(this).val());
+                
+           })
+            })
+            alert($('input').length);
+        })
+    </script>
+    </head>
+<body>
+    <input type="button" id="recorrer" value="Recorrer INPUT">
+<br><br>
+    <input type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <input type="button" value="4">
+    <input type="button" value="5">
+</body>
+</html>

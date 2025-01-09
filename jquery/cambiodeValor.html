@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./asset/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           /* let valor;
+            $('#uno').on("click", function () {
+                valor = $('#uno').val();
+                $('#texto').val(valor);    
+            })
+            $('#dos').on("click", function () {
+                valor = $('#dos').val();
+                $('#texto').val(valor);     
+            })
+            $('#tres').on("click", function () {
+                valor = $('#tres').val();
+                $('#texto').val(valor);    
+            })*/
+
+
+            $('input[type="button"]').on("click",function () {
+ 
+                let contenido=$(this).val();
+
+                $('#texto').val(contenido);  
+            })
+
+
+            
+        })
+    </script>
+    </head>
+<body>
+   <input type="text" id="texto">
+
+   <input type="button" value="1" id="uno">
+   <input type="button" value="2" id="dos">
+   <input type="button" value="3" id="tres">
+</body>
+</html>

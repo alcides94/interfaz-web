@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./asset/jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $('#rojo').click(function() {
+                //alert("Hola");
+                $('#palabra').css('color','red');
+            })
+
+            $('#azul').click(function() {
+                //alert("Hola");
+                $('#palabra').css('color','blue');
+            })
+            $('#grande').click(function() {
+                //alert("Hola");
+                $('#palabra').css('font-size','80px');
+            })
+            $('#pequeno').click(function() {
+                //alert("Hola");
+                $('#palabra').css('font-size','10px');
+            })
+            $('#original').click(function() {
+                //alert("Hola");
+                $('#palabra').css('font-size','32px');
+            })
+        })
+        
+
+    </script>
+</head>
+<body>
+    <h1 id="palabra">HOLA MUNDO</h1>
+    <input type="button" value="Rojo" id="rojo">
+    <input type="button" value="Azul" id="azul">
+    <input type="button" value="Grande" id="grande">
+    <input type="button" value="Pequeño" id="pequeno">
+    <input type="button" value="Original" id="original">
+</body>
+</html>

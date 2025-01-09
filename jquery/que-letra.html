@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./asset/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('#cajaTexto').keypress(function(e){
+       
+        $('#teclaPulsada').text(String.fromCharCode(e.which))
+        });
+        })
+    </script>
+    </head>
+<body>
+    <h1>Detección teclas</h1>
+    <input type="text" id="cajaTexto">
+    <p id="teclaPulsada"></p>
+    
+</body>
+</html>
