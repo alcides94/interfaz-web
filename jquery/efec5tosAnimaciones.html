@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./asset/jquery-3.7.1.min.js"></script>
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+        p{
+            width: 300px;
+            height: 100px;
+            font-size: 30px;
+            background-color: aqua;
+        }
+
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $('#fadeButton').on("click",function () {
+                    //alert("hoa");
+                $('div').fadeOut();
+        });
+        
+        $('#deslizar').on("click",function () {
+            $('#parra').slideUp();
+        })
+    
+        $('#mirar').on("click",function () {
+            $('.oculto').fadeIn();
+        })
+    
+        $("#linux").on("mouseenter",function () {
+            $("#linux").fadeOut();
+        })
+    
+        $('#deslizarAbajo').on("click",function () {
+            $('.animado').slideDown();
+        })
+        $(".cajaColor").on("mouseenter",function () {
+            $(".cajaColor").css("background-color","green");
+        })
+
+        $('#mirarOcultar').on("click",function () {
+                $('.cajaVisual').toggle();
+        })
+
+        $('#derecha').on("click",function () {
+            $('.cajaenMovimiento').hide(function () {
+                $('.cajaenMovimiento').slide("d")
+            });
+        })
+
+        })
+
+    </script>
+
+</head>
+<body>
+    <!-- 1. Ejercicios con jQuery UI: Efectos y Animaciones
+        Ejercicios:
+       - 1-Haz que un <div> con clase .cuadro se desvanezca (fade) cuando se haga clic en un botón con id #fadeButton.
+       - 2-Crea un efecto de deslizamiento (slideUp) para un <p> cuando el usuario haga clic en un botón.
+       - 3-Haz que un elemento con clase .oculto se muestre con una animación (fadeIn) cuando se haga clic en un botón.
+       - 4-Aplica un efecto de desvanecimiento al pasar el ratón sobre una imagen.
+       - 5-Haz que un <div> con clase .animado se deslice hacia abajo (slideDown) al hacer clic en un botón con id #slideButton.
+       - 6-Haz que el color de fondo de un <div> cambie de manera animada cuando se pase el ratón sobre él.
+       - 7-Usa un efecto de desvanecimiento para mostrar y ocultar un <div> al hacer clic en un botón.
+       - 8-Haz que un texto se deslice de izquierda a derecha usando show() y hide().
+        9-Usa el método toggle() para alternar la visibilidad de un elemento al hacer clic.
+        10-Haz que un <div> se desplace suavemente a una posición específica en la página. -->
+    
+    <div class="cuadro">Desvanecer</div>
+
+    <input type="button" value="Desvanecer" id="fadeButton">
+            
+    <p id="parra">
+
+        Deslizamiento Arriba
+
+    </p>
+    <input type="button" value="Deslizamiento" id="deslizar">
+    <br><br>
+    <p class="oculto" hidden>
+
+        Mirar Contenido
+
+    </p>
+    <input type="button" value="Mirar Contenido" id="mirar">
+
+    <img src="./img/supertux.png" alt="" id="linux"> 
+
+    <div class="animado" hidden>
+        Deslizando Abajo
+    </div>
+    <input type="button" value="Mirar Contenido Deslizando" id="deslizarAbajo">
+
+    <div class="cajaColor">
+        Cambio de color
+    </div>
+
+    <div class="cajaVisual">
+        Mirar / Ocultar
+    </div>
+    <input type="button" value="Mirar/Ocultar" id="mirarOcultar">
+
+    <div class="cajaenMovimiento">
+        Caja se mueve de derecha a Izquierda
+    </div>
+
+    <input type="button" value="Izquierda" id="izquierda">
+    <input type="button" value="Derecha" id="derecha">
+
+</body>
+</html>
