@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./asset/jquery-3.7.1.min.js"></script>
+    <script src="./asset/jquery-ui-1.14.1/jquery-ui.min.js"></script>
     <style>
         div{
             width: 300px;
             height: 100px;
             background-color: aqua;
+           
         }
 
         p{
@@ -23,26 +25,29 @@
 
     <script>
         $(document).ready(function(){
-            $('#fadeButton').on("click",function () {
+        
+        
+        $('#fadeButton').on("click",function () {
                     //alert("hoa");
-                $('div').fadeOut();
+                $('#cuadro').fadeOut();
         });
         
         $('#deslizar').on("click",function () {
             $('#parra').slideUp();
-        })
+        });
     
         $('#mirar').on("click",function () {
             $('.oculto').fadeIn();
-        })
+        });
     
         $("#linux").on("mouseenter",function () {
             $("#linux").fadeOut();
-        })
+        });
     
         $('#deslizarAbajo').on("click",function () {
             $('.animado').slideDown();
-        })
+        });
+        
         $(".cajaColor").on("mouseenter",function () {
             $(".cajaColor").css("background-color","green");
         })
@@ -52,12 +57,30 @@
         })
 
         $('#derecha').on("click",function () {
-            $('.cajaenMovimiento').hide(function () {
-                $('.cajaenMovimiento').slide("d")
-            });
+            $('.cajaenMovimiento').hide( "drop", { direction: "rigth" }, "slow" );
         })
+        $('#izquierda').on("click",function () {
+            $('.cajaenMovimiento').show( "drop", { direction: "rigth" }, "slow" );
+        })
+        //9
+        $('#visibilidad').on("click",function () {
+                $('.cajadeVisibilidad').toggle(500);
+        })
+        //10
+        $('#derechaCaja').on("click",function () {
+            $('.moverCaja').animate({ "left": "+=50px" }, "slow" );
+        })
+        $('#izquierdaCaja').on("click",function () {
+            $('.moverCaja').animate({ "left": "-=50px" }, "slow" );
+        })
+        
+        //11
+
+
+
 
         })
+        
 
     </script>
 
@@ -76,7 +99,7 @@
         9-Usa el método toggle() para alternar la visibilidad de un elemento al hacer clic.
         10-Haz que un <div> se desplace suavemente a una posición específica en la página. -->
     
-    <div class="cuadro">Desvanecer</div>
+    <div class="cuadro" id="cuadro">Desvanecer</div>
 
     <input type="button" value="Desvanecer" id="fadeButton">
             
@@ -117,5 +140,16 @@
     <input type="button" value="Izquierda" id="izquierda">
     <input type="button" value="Derecha" id="derecha">
 
+    <div class="cajadeVisibilidad">
+        Alternar la visibilidad 
+    </div>
+    <input type="button" value="Mirar/Ocultar" id="visibilidad">
+    <div style="position: relative; background-color: red; width: 100%;">
+       
+            <img src="./img/supertux.png" alt="" class="moverCaja" style="position: absolute;" width="80px" > 
+       
+    </div>
+    <input type="button" value="Izquierda" id="izquierdaCaja">
+    <input type="button" value="Derecha" id="derechaCaja">
 </body>
 </html>
