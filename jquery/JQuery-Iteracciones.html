@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    
+
+    <style>
+        #arrastrame{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+        #deposito{
+            background-color: aqua;
+            width: 200px;
+            height: 200px;
+        }
+
+        #redimensionable{
+            background-color:antiquewhite;
+            width: 200px;
+            height: 200px;
+        }
+
+        #redimensionableH{
+            background-color:green;
+            width: 200px;
+            height: 200px;
+        }
+        #redimensionableY{
+            background-color:gray;
+            width: 200px;
+            height: 200px;
+        }
+        #seleccion>li{
+            border: 1px solid black;
+        }
+        #seleccion>li.ui-selected{
+            border: 1px solid black;
+            background-color: aqua
+        }
+        #moverAgrandar{
+            background-color:blueviolet;
+            width: 200px;
+            height: 200px;
+            color: white;
+        }
+        #arrastrar{
+            background-color:blue;
+            width: 100px;
+            height: 100px;
+            color: white;
+        }
+
+        #container{
+            background-color: aqua;
+            width: 200px;
+            height: 200px;
+        }
+
+        #cajaMoviendose{
+            background-color:blueviolet;
+            width: 200px;
+            height: 200px;
+            color: white;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+
+            // 21-Crea un efecto de arrastrar y soltar (draggable y droppable) entre dos elementos.
+            $('#arrastrame').draggable();
+            $('#deposito').droppable({
+                drop: function() {
+                    $('#deposito').css("background-color","red");
+                    alert( "Se deposito un elemento" );
+
+                }
+                
+            });
+            $('#deposito').droppable({
+                
+                out: function() {
+                    $('#deposito').css("background-color","aqua");
+                    //alert( "Se deposito un elemento" );
+
+                }
+            });
+
+            // 22-Haz que un <div> sea redimensionable utilizando el widget resizable.
+            $('#redimensionable').resizable(); // para esta funcion necesitamos jquery , jqueryui y el thema de jquery
+            
+            //23-Haz que un elemento sea resizable solo horizontalmente.
+            $('#redimensionableH').resizable({
+                handles: "e, w"
+            });
+
+            //24-Haz que un <div> sea resizable solo verticalmente.
+                $('#redimensionableY').resizable({
+                handles: "n, s"
+            });
+
+            //25-Usa el widget selectable para permitir seleccionar varios elementos de una lista.
+            $('#seleccion').selectable();
+
+            // 26-Haz que un elemento sea arrastrable y también resizable al mismo tiempo.
+            $('#moverAgrandar').resizable().draggable();
+
+            //27-Convierte un elemento en un área de arrastre con el widget draggable.
+
+            $('#arrastrar').draggable();
+
+            //28-Convierte un contenedor en un área de soltado con el widget droppable.
+            //29-Usa el widget draggable y droppable para crear un juego de tipo "arrastra y coloca".
+
+            $('#container').droppable({
+                drop: function () {
+                    $('#container').css("background-color","green");
+                    $('#container').text("Gracias");
+                }
+            });
+           
+            //30-Haz que un elemento se desplace hacia una posición específica cuando se hace clic, usando el widget draggable.
+  
+            $('#cajaMoviendose').draggable();
+            $('#cajaMoviendose').click(function () {
+                $(this).animate({
+                    left: '400px'                    
+                },1000)
+            }
+                
+            );
+
+        });
+    </script>
+    
+</head>
+<body>
+    <!-- 21-Crea un efecto de arrastrar y soltar (draggable y droppable) entre dos elementos. -->
+    <div id="arrastrame">
+        Arrastrame
+    </div>
+    <br><br>
+    <div id="deposito">
+        Deposito
+    </div>
+
+    <br><br>
+    <div id="redimensionable" >
+        Redimensionable
+    </div>
+    <br><br>
+    <div id="redimensionableH">
+        Redimensionable HORIZONTAL
+    </div>
+    <br><br>
+    <div id="redimensionableY">
+        Redimensionable VERTICAL
+    </div>
+    <br><br>
+    <ul id="seleccion">
+        <li>Argentina</li>
+        <li>España</li>
+        <li>Francia</li>
+        <li>Holanda</li>
+    </ul>
+    <br><br>
+    <div id="moverAgrandar">
+        MOVER Y AGRANDAR
+    </div>
+<br><br>
+    <div id="arrastrar">
+        Arrastramos
+    </div>
+
+    <br><br>
+    <div id="container">
+        Aqui
+    </div>
+
+    <div id="cajaMoviendose">
+        Ole Ole Ole 
+    </div>
+</body>
+</html>

@@ -55,26 +55,32 @@
         $('#mirarOcultar').on("click",function () {
                 $('.cajaVisual').toggle();
         })
-
+        //6
         $('#derecha').on("click",function () {
             $('.cajaenMovimiento').hide( "drop", { direction: "rigth" }, "slow" );
         })
         $('#izquierda').on("click",function () {
             $('.cajaenMovimiento').show( "drop", { direction: "rigth" }, "slow" );
         })
-        //9
+        //7
         $('#visibilidad').on("click",function () {
                 $('.cajadeVisibilidad').toggle(500);
         })
-        //10
+        //8
         $('#derechaCaja').on("click",function () {
             $('.moverCaja').animate({ "left": "+=50px" }, "slow" );
         })
-        $('#izquierdaCaja').on("click",function () {
-            $('.moverCaja').animate({ "left": "-=50px" }, "slow" );
+
+        //9
+        $('#btnToggle').on("click",function () {
+            $(".cajaVisualToggle").toggle();
         })
         
-        //11
+        //10
+        $('#movercajita').on("click",function () {
+            $('.cajita').animate({ left: '500px' });
+        })
+
 
 
 
@@ -96,8 +102,8 @@
        - 6-Haz que el color de fondo de un <div> cambie de manera animada cuando se pase el ratón sobre él.
        - 7-Usa un efecto de desvanecimiento para mostrar y ocultar un <div> al hacer clic en un botón.
        - 8-Haz que un texto se deslice de izquierda a derecha usando show() y hide().
-        9-Usa el método toggle() para alternar la visibilidad de un elemento al hacer clic.
-        10-Haz que un <div> se desplace suavemente a una posición específica en la página. -->
+       - 9-Usa el método toggle() para alternar la visibilidad de un elemento al hacer clic.
+       - 10-Haz que un <div> se desplace suavemente a una posición específica en la página. -->
     
     <div class="cuadro" id="cuadro">Desvanecer</div>
 
@@ -151,5 +157,15 @@
     </div>
     <input type="button" value="Izquierda" id="izquierdaCaja">
     <input type="button" value="Derecha" id="derechaCaja">
+    <div class="cajaVisualToggle">
+        Mirar / Ocultar con Toggle
+    </div>
+    <input type="button" value="btnToggle" id="btnToggle">
+    <div style="position: relative; width: 100%;">
+        <div class="cajita" style="position: absolute; background-color: bisque;">
+            CAJA
+        </div>
+    </div>
+    <input type="button" value="Mover al Centro" id="movercajita">
 </body>
 </html>

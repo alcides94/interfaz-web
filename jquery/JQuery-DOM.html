@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    
+    <script>
+        
+        $(document).ready(function(){
+        //1-Selecciona el elemento con la clase .item y cámbiale el texto.
+            $('.item').on("click",function () {
+                $('.item').text("Adios");    
+            })
+            
+        //2-Selecciona el primer elemento con la clase .producto y cambia su color de fondo a azul.
+        
+            $(".producto").on("click", function () {
+                $(".producto").css("background-color", "blue");
+                $(".producto").text("Azul")
+            })
+        //3-Accede al primer <div> de la página y agrega el texto "Hola Mundo".
+            let cadena=$("div:first").text()+" - Hola Mundo";
+            $("div:first").text(cadena)
+
+        //4-Selecciona el elemento con id #titulo y cambia su color a rojo.
+
+
+
+        });
+    </script>
+    <style>
+        .producto{
+            background-color: azure;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <p class="item">Hola</p>
+
+    <div class="producto">
+        Azure
+    </div>
+
+
+
+</body>
+</html> 
