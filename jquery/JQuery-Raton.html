@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script>
+        $(document).ready(function () {
+    //11-Detecta cuando el usuario pasa el ratón sobre un <div> con id #area y 
+    // cambia su fondo a verde.
+            $('#area').on("mouseenter",function () {
+                $(this).css("background-color","green");
+            })
+    //15-Haz que un <div> cambie de color cuando el ratón entre 
+    // y vuelva al color original cuando el ratón salga.
+            $('#area').on('mouseleave', function() {
+                $(this).css("background-color",""); // Restaura el tamaño original al sacar el ratón
+        });
+    //12-Cuando el usuario hace clic en un <button>, 
+    // cambia el texto a "Clicado".
+            $('#btn').on("click",function () {
+                $(this).text("Clicando");
+            })
+    //13-Detecta el movimiento del ratón sobre un área con id #contenedor 
+    // y muestra las coordenadas del ratón en consola.
+           $('#contenedor').on("mousemove",function (params) {
+                let x=params.clientX;
+                let y=params.clientY;
+                $(this).text('Eje X:'+x+' Eje Y: '+y );
+                //console.log('Coordenadas del ratón: X=' + x + ', Y=' + y);
+           }) 
+    //14-Haz que un <p> con clase .item se haga más grande al pasar el ratón por encima.
+        $('.item').on('mouseenter', function() {
+             $(this).css('transform', 'scale(2)'); // Aumenta el tamaño del párrafo
+        });
+
+        $('.item').on('mouseleave', function() {
+            $(this).css('transform', 'scale(1)'); // Restaura el tamaño original al sacar el ratón
+        });
+
+
+    //16-Detecta el clic derecho del ratón sobre un <span> 
+    // y muestra un mensaje.
+        $('#derecho').on("contextmenu",function (event) {
+            event.preventDefault();
+            $(this).text("Se efectuo click derecho")
+        })
+        
+ //.......????   //17-Haz que una imagen con id #foto se mueva con el ratón 
+    // dentro de un contenedor con id #area.
+        
+    $('#deposito').on('mousemove', function(event) {
+            var mouseX = event.clientX ; // Coordenada X dentro del contenedor
+            var mouseY = event.clientY ;  // Coordenada Y dentro del contenedor
+
+            $('#foto').css({
+                'position': 'absolute',
+                'left': mouseX - $('#foto').width() + 'px', // Centra la imagen respecto al ratón
+                'top': mouseY - $('#foto').height() + 'px'   // Centra la imagen respecto al ratón
+            });
+        });
+
+//18-Detecta cuando el usuario hace doble clic sobre un <p> y cambia su texto.
+    $('#parra').on('dblclick', function() {
+        $(this).text('Texto cambiado tras doble clic');
+    });
+
+ //---?????   //19-Haz que el contenido de un <div> se desplace hacia arriba
+    //  cuando el ratón entre en el área.
+
+    $('#deposito2').on('mouseenter', function() {
+        $(this).animate({
+            scrollTop: 0
+        }, 500);  // 500 milisegundos para la animación
+    });
+
+//20-Detecta cuando el ratón sale de un área con id #zona y muestra un mensaje de alerta.
+
+    $('#zona').on('mouseleave', function() {
+            alert('El ratón ha salido del área');
+    });
+
+    })
+    </script>
+    <style>
+        #area{
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+        }
+        #contenedor{
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+        }
+        #deposito{
+            border: 1px solid black;
+            height: 200px;
+            width: 200px;
+        }
+        #deposito2{
+            border: 1px solid black;
+            height: 200px;
+            width: 200px;
+        }
+        #zona{
+            border: 1px solid black;
+            height: 200px;
+            width: 200px;
+        }
+        img{
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="area"></div>
+    <br>
+    <button type="button" id="btn">Aqui</button>
+    <br><br>
+    <div id="contenedor"></div>
+    <br>
+    <p class="item">Detectar Mouseenter</p>
+    
+    <span id="derecho">Click Derecho Aqui</span>
+<br><br>
+    
+    <br><br>
+<div id="deposito">
+    <img src="../06-bootstrap/ej1/image.jpeg" alt="" id="foto">
+</div>
+<br>
+<p id="parra">Aqui</p>
+<br>
+<div id="deposito2">
+    <img src="../06-bootstrap/ej1/image.jpeg" alt="" id="foto">
+</div>
+<br>
+<div id="zona"></div>
+</body>
+</html>

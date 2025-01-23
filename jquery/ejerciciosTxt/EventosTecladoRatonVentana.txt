@@ -22,7 +22,6 @@ Ejercicios:
 14-Haz que un <p> con clase .item se haga más grande al pasar el ratón por encima.
 15-Haz que un <div> cambie de color cuando el ratón entre y vuelva al color original cuando el ratón salga.
 16-Detecta el clic derecho del ratón sobre un <span> y muestra un mensaje.
-17-Haz que una imagen con id #foto se mueva con el ratón dentro de un contenedor con id #area.
 18-Detecta cuando el usuario hace doble clic sobre un <p> y cambia su texto.
 19-Haz que el contenido de un <div> se desplace hacia arriba cuando el ratón entre en el área.
 20-Detecta cuando el ratón sale de un área con id #zona y muestra un mensaje de alerta.

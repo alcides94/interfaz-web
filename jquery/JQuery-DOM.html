@@ -28,8 +28,66 @@
             $("div:first").text(cadena)
 
         //4-Selecciona el elemento con id #titulo y cambia su color a rojo.
+            $('#titulo').css("color","red");
 
+        //5-Accede a todos los elementos <p> en la página y cambia su tamaño de fuente a 18px.
+            $('p').css("font-size", "18px");
 
+        //6-Añade un nuevo elemento <li> al final de una lista con id #lista.
+            $('#lista').append("<li>Cuatro</li>");
+            $('#lista').prepend("<li>Los ultimos seran primeros JA</li>");
+      
+        //7-Accede al contenido del elemento con id #descripcion y muestra el valor en consola.
+            console.log($("#descripcion").val());
+        
+        //8-Obtén todos los elementos con la clase .carta y cambia su color de borde a verde.
+            $(".carta").css("border", "5px, solid green")
+            
+        //9-Elimina todos los elementos con la clase .eliminar.
+            $('#eliminar').on("click",function () {
+                $(".carta").remove();
+            })
+
+        //10-Selecciona todos los <span> dentro de un <div> con id #contenedor y 
+        // cambia su color de fondo a gris.
+
+            $('#contenedor>span').css("background-color","red");
+        /*----------------------------------------------------------------------------------*/
+        //FUNCIONES DOM
+
+        //11-Selecciona todos los elementos con la clase .foto y ocúltalos.
+            $('.foto').hide();
+
+        //12-Añade un borde rojo a todos los elementos <h1> dentro de un <div>.
+            $("div>h1").css("border","red 1px solid")
+
+        //13-Accede a todos los elementos de tipo <input> y 
+        // establece su valor como "Texto predeterminado".
+            $('#botonPrede').val("Texto predeterminado");
+            
+        //14-Selecciona el segundo <div> en el documento y cámbiale el fondo a amarillo.
+            $(".ej14").eq(1).css("background-color","red")
+
+        //15-Añade un class llamado activo a todos los <a> dentro de un <nav>.
+            $("nav>a").addClass('activo'); //se añade class a todos los a
+
+        //16-Inserta un nuevo párrafo al principio del <body> con el texto "Bienvenido".
+            $('body').prepend("<p>Bienvenido</p>")
+
+        //17-Cambiar el src de una imagen con id #imagen a una nueva URL.
+            $('#imagen').attr("src", "../06-bootstrap/ej5/img/edi.jpg"); //es con la funcion attr (cambia los atributos actuales del elemento)
+
+        //18-Establece un atributo data-id en todos los elementos con la clase .producto.
+    
+            $('.producto').each(function(index) {
+                $(this).attr('data-id', index + 1); // Establece un atributo data-id con valores incrementales
+            });
+
+        //19-Cambiar el valor de un <input> con id #nombre a "Juan Pérez".
+            $('#nombre').val("Juan Perez")
+            
+        //20-Añadir un título en el <head> que diga "Página Web Interactiva".
+            $('title').text("Página Web Interactiva");
 
         });
     </script>
@@ -40,16 +98,63 @@
             height: 100px;
             border: 1px solid black;
         }
+        .carta{
+            background-color: blue;
+            height: 50px;
+            width: 90px;
+        }
     </style>
 </head>
 <body>
     <p class="item">Hola</p>
-
+    <p>Jaime</p>
     <div class="producto">
         Azure
     </div>
+    <h1 id="titulo">CAMBIAR COLOR</h1>
 
+    <ol id="lista">
+        <li>Uno</li>
+        <li>Dos</li>
+        <li>Tres</li>
+    </ol>
 
+    <textarea name="" id="descripcion">Hola este contenido es de prueba</textarea>
+    <br><br>
+    <div class="carta">CARTA</div>
+    <br><br>
+    <div class="carta">CARTA</div>
+    <br><br>
+    <input type="button" value="Eliminar Carta" id="eliminar">
 
+    <div id="contenedor">
+        <span>Hola</span>
+        <span>Mundo</span>
+    </div>
+    <div class="foto">Foto 1</div>
+    <div class="foto">Foto 2</div>
+    <div class="foto">Foto 3</div>
+    <div>
+        <h1>Hola</h1>
+        <h1>Mundo</h1>
+    </div>
+
+    <input type="button" value="" id="botonPrede">
+
+    <div class="ej14" style="background-color: yellow;">Amarrillo</div>
+    <div class="ej14">Rojo</div>
+    <div class="ej14" style="background-color: green;">Verde</div>
+
+    <nav>
+        <a href="">Indice</a>
+        <a href="">Quienes Somos</a>
+        <a href="">Contacto</a>
+    </nav>
+
+    <img src="../06-bootstrap/ej5/img/city.jpg" alt="" id="imagen">
+
+    <div class="producto"></div>
+
+    <input type="button" value="id" id="nombre">
 </body>
 </html> 

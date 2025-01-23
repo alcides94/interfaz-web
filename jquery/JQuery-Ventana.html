@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script>
+        $(document).ready(function () {
+//21-Detecta cuando la ventana se redimensiona y
+//  muestra un mensaje en la consola.
+            
+            $(window).on('resize', function() {
+                console.log('La ventana ha sido redimensionada');
+            });
+//22-Detecta cuando la ventana se carga y cambia el fondo de la página a azul.
+            $(window).on('load', function() {
+                $('body').css('background-color', 'blue');
+                console.log("ya se cargo");
+                
+            });
+
+//..............?????//23-Detecta cuando se minimiza la ventana y muestra un mensaje en la consola.
+
+$(window).on('resize', function() {
+    if ($(window).width() <= 100 || $(window).height() <= 100) {
+        console.log('La ventana ha sido minimizada o tiene un tamaño muy pequeño');
+    }
+});
+
+//..........?????????24-Haz que el contenido de un <div> se adapte al tamaño de la ventana.
+    function ajustarTamaño() {
+                var anchoVentana = $(window).width();  // Obtener el ancho de la ventana
+                var altoVentana = $(window).height();  // Obtener el alto de la ventana
+                
+                $('#miDiv').css({
+                    'width': anchoVentana + 'px',  // Ajustar el ancho al tamaño de la ventana
+                    'height': altoVentana + 'px'   // Ajustar el alto al tamaño de la ventana
+                });
+            }
+
+            // Llamar a la función para ajustar el tamaño cuando la página se carga
+            ajustarTamaño();
+
+            // Llamar a la función cada vez que se redimensiona la ventana
+            $(window).resize(function() {
+                ajustarTamaño();
+            });
+
+
+        })
+
+    //25-Muestra el tamaño de la ventana cada vez que se redimensiona.
+    $(window).on('resize', function() {
+    var ancho = $(window).width();  // Obtener el ancho de la ventana
+    var alto = $(window).height();  // Obtener el alto de la ventana
+    
+    console.log('Ancho: ' + ancho + 'px, Alto: ' + alto + 'px');
+});
+
+    </script>
+    <style>
+     
+        #miDiv {
+            background-color: lightblue; /* Solo para hacer visible el área */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="miDiv">
+        <p>Este contenido se adapta al tamaño de la ventana.</p>
+    </div>
+
+</body>
+</html>

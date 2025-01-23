@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script>
+        $(document).ready(function () {
+
+//1-Detecta cuando se presiona la tecla "Enter" en un <input> y muestra un mensaje en la consola.
+            $('#teclas').keypress(function (params) {
+                if (params.which === 13) {
+                    console.log("Se preciono enter");   
+                }   
+            })
+
+//2-Muestra un mensaje cada vez que el usuario escriba en un campo de texto con id #inputTexto.
+
+            $('#inputTexto').on("input",function () {
+                console.log("Estas Escribiendo: "+$(this).val());
+                
+            })
+
+//3-Imprime en la consola el código de la tecla presionada en un campo de texto.
+            $('#codigoAscii').on("keydown",function (params) {
+                console.log(params.which)
+            })
+//4-Detecta cuando el usuario presiona la tecla "Esc" y limpia el contenido de un campo con id #campo.
+            $('#campo').on("keydown",function (params) {
+                if (params.which==27){
+                    $('#campo').val("");
+                    console.log("limpo");
+                    $('#campo').css('background-color', '');                     
+
+                }
+            })
+//5-Cambia el fondo de un campo de texto a amarillo cuando se presiona la tecla "Tab".
+            $('#campo').on("keydown",function (params) {
+                if (params.which==9){
+                    $('#campo').css('background-color', 'yellow');                     
+                }
+            })
+
+//6-Añadir un evento keydown a un campo de entrada que muestre el carácter
+//  que se ha escrito.
+            $('#campoEntrada').on("keypress",function(params) {
+                
+                let caracter = params.key;
+                $('#caracter').text(caracter);
+            });
+//7-Detecta cuando se escribe en un campo con id #email y verifica si tiene un "@" 
+// y muestra un mensaje.
+            $('#campoEmail').on("input",function (params) {
+                let text=$(this).val();
+                $(this).next('p').remove(); //para eliminar el siguiente
+                if (text.includes('@')){
+                    $(this).after('<p>Incluye @</p>'); //incluye despues de un campo determinado
+                }else{
+                    $(this).after('<p>No te olvides del  @</p>');
+                }
+
+            })
+//8-Detecta cuando se presiona una tecla en un campo de texto con
+//  id #busqueda y muestra un mensaje en consola.
+            $('#busqueda').on("keypress",function () {
+                console.log("Se precioo una letra en el campo busqueda");
+                
+            })
+
+//9-Muestra el número de caracteres restantes cuando el usuario escribe 
+// en un campo con un límite de 10 caracteres.
+            $('#limite').on("input",function (params) {
+                let contenido=$(this).val();
+                if (contenido.length>10) {
+                    let resta=contenido.length-10;
+                    console.log("te pasaste de los 10 por: "+ resta);
+                    
+                }
+                if (params.shiftKey) {
+                    $("#shif").css("background-color","yellow");
+                }
+            })
+//10-Detecta cuando el usuario presiona la tecla "Shift" y cambia el color 
+// de fondo de un <p>.
+            $('#limite').on("keydown",function (params) {
+                
+                if (params.shiftKey) {
+                    $("#shif").css("background-color","yellow");
+                }
+            })
+
+        })
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <p>Detectar si precionas Enter</p>
+    <textarea name="" id="teclas"></textarea>
+    <br>
+    <p>Mostrar Mensaje por Consola</p>
+    <input type="text" name="" id="inputTexto">
+    <input type="text" name="" id="inputT">
+    <br>
+    <p>Codigo ASCII</p>
+    <textarea name="" id="codigoAscii"></textarea>
+    <br><br>
+    <p>Esc para limpiar campo y Cambiar el fondo con tab</p>
+    <input type="text" name="" id="campo">
+    <br><br>
+    <p>Mostrar caracter</p>
+    <input type="text" name="" id="campoEntrada">
+    <p><span id="caracter"></span></p>
+    <br>
+    <p>Campo Email</p>
+    <input type="text" name="" id="campoEmail">
+    <br>
+    <p>Deteccion de presion de letra</p>
+    <input type="text" name="" id="busqueda">
+    <p id="shif">Limite 10</p>
+    <input type="text" name="" id="limite">
+</body>
+</html>
