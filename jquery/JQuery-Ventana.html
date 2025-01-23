@@ -24,11 +24,11 @@
 
 //..............?????//23-Detecta cuando se minimiza la ventana y muestra un mensaje en la consola.
 
-$(window).on('resize', function() {
-    if ($(window).width() <= 100 || $(window).height() <= 100) {
-        console.log('La ventana ha sido minimizada o tiene un tamaño muy pequeño');
-    }
-});
+            $(window).on('resize', function() {
+                if ($(window).width() <= 100 || $(window).height() <= 100) {
+                    console.log('La ventana ha sido minimizada o tiene un tamaño muy pequeño');
+                }
+            });
 
 //..........?????????24-Haz que el contenido de un <div> se adapte al tamaño de la ventana.
     function ajustarTamaño() {
@@ -53,16 +53,71 @@ $(window).on('resize', function() {
         })
 
     //25-Muestra el tamaño de la ventana cada vez que se redimensiona.
-    $(window).on('resize', function() {
-    var ancho = $(window).width();  // Obtener el ancho de la ventana
-    var alto = $(window).height();  // Obtener el alto de la ventana
-    
-    console.log('Ancho: ' + ancho + 'px, Alto: ' + alto + 'px');
-});
+            $(window).on('resize', function() {
+            var ancho = $(window).width();  // Obtener el ancho de la ventana
+            var alto = $(window).height();  // Obtener el alto de la ventana
+            
+            console.log('Ancho: ' + ancho + 'px, Alto: ' + alto + 'px');
+        
+//??????..............26-Detecta cuando la ventana está a punto de cerrarse y muestra un mensaje de confirmación.
+            $(window).on('beforeunload', function (e) {
 
+                alert("Estas seguro de cerrar?");
+            });
+                    
+  // 27-Haz que un elemento con id #contenedor se muestre u oculte cuando se haga un scroll en la página.
+            $(window).scroll(function() {
+                    if ($(this).scrollTop() > 100) { // Cambia 100 por el valor que desees
+                        $('#contenedor').fadeIn(); // Muestra el contenedor
+                    } else {
+                        $('#contenedor').fadeOut(); // Oculta el contenedor
+                    }
+                });
+        });
+//28-Detecta cuando la ventana se desplaza y muestra la posición en la consola.
+            $(window).scroll(function() {
+                // Obtener la posición actual del scroll
+                var scrollPosition = $(this).scrollTop();
+                // Mostrar la posición en la consola
+                console.log("Posición del scroll: " + scrollPosition + "px");
+        });
+//29-Haz que un <div> cambie de tamaño cuando se redimensiona la ventana.
+    $(window).resize(function() {
+        // Obtener el ancho y alto de la ventana
+        var anchoVentana = $(window).width();
+        var altoVentana = $(window).height();
+
+        // Cambiar el tamaño del div en función del tamaño de la ventana
+        $('#contenedor').css({
+            width: anchoVentana / 4 + 'px', // Cambia el tamaño a 1/4 del ancho de la ventana
+            height: altoVentana / 4 + 'px'  // Cambia el tamaño a 1/4 de la altura de la ventana
+        });
+
+//30-Detecta si la ventana es redimensionada a un tamaño específico y muestra un mensaje.
+
+$(window).resize(function() {
+        // Obtener el ancho y alto de la ventana
+        var anchoVentana = $(window).width();
+        var altoVentana = $(window).height();
+
+        // Tamaño específico para mostrar el mensaje
+        var anchoEspecifico = 800; // Cambia este valor según tus necesidades
+        var altoEspecifico = 600;   // Cambia este valor según tus necesidades
+
+        // Verificar si la ventana tiene el tamaño específico
+        if (anchoVentana === anchoEspecifico && altoVentana === altoEspecifico) {
+            $('#mensaje').text('La ventana ha sido redimensionada a ' + anchoEspecifico + 'x' + altoEspecifico + ' píxeles.');
+        } else {
+            $('#mensaje').text('La ventana tiene un tamaño diferente: ' + anchoVentana + 'x' + altoVentana + ' píxeles.');
+        }
+    });
+
+    });
     </script>
     <style>
-     
+        body {
+            height: 2000px; /* Para permitir el scroll */
+        }
         #miDiv {
             background-color: lightblue; /* Solo para hacer visible el área */
             display: flex;
@@ -70,12 +125,22 @@ $(window).on('resize', function() {
             align-items: center;
             text-align: center;
         }
+        #contenedor {
+            margin-top: 100px;
+            background-color: lightblue; /* Solo para hacer visible el área */
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
-    <div id="miDiv">
+    <!-- <div id="miDiv">
         <p>Este contenido se adapta al tamaño de la ventana.</p>
-    </div>
+    </div> -->
 
+    <div id="contenedor"></div>
+    <br><br>
+    <p id="mensaje"></p>
 </body>
 </html>

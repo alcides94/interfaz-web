@@ -26,64 +26,71 @@
     <script>
         $(document).ready(function(){
         
-        
+        //- 1-Haz que un <div> con clase .cuadro se desvanezca (fade) cuando se haga clic en un botón con id #fadeButton.
         $('#fadeButton').on("click",function () {
                     //alert("hoa");
                 $('#cuadro').fadeOut();
         });
-        
+        //       - 2-Crea un efecto de deslizamiento (slideUp) para un <p> cuando el usuario haga clic en un botón.
+
         $('#deslizar').on("click",function () {
             $('#parra').slideUp();
         });
-    
+    //       - 3-Haz que un elemento con clase .oculto se muestre con una animación (fadeIn) cuando se haga clic en un botón.
+
         $('#mirar').on("click",function () {
             $('.oculto').fadeIn();
         });
-    
+    //       - 4-Aplica un efecto de desvanecimiento al pasar el ratón sobre una imagen.
+
         $("#linux").on("mouseenter",function () {
             $("#linux").fadeOut();
         });
-    
+    //       - 5-Haz que un <div> con clase .animado se deslice hacia abajo (slideDown) al hacer clic en un botón con id #slideButton.
++
         $('#deslizarAbajo').on("click",function () {
             $('.animado').slideDown();
         });
-        
+        //       - 6-Haz que el color de fondo de un <div> cambie de manera animada cuando se pase el ratón sobre él.
+
         $(".cajaColor").on("mouseenter",function () {
             $(".cajaColor").css("background-color","green");
         })
+//       - 7-Usa un efecto de desvanecimiento para mostrar y ocultar un <div> al hacer clic en un botón.
 
         $('#mirarOcultar').on("click",function () {
                 $('.cajaVisual').toggle();
         })
-        //6
+        //       - 8-Haz que un texto se deslice de izquierda a derecha usando show() y hide().
+
         $('#derecha').on("click",function () {
             $('.cajaenMovimiento').hide( "drop", { direction: "rigth" }, "slow" );
         })
         $('#izquierda').on("click",function () {
             $('.cajaenMovimiento').show( "drop", { direction: "rigth" }, "slow" );
         })
-        //7
+        //       - 9-Usa el método toggle() para alternar la visibilidad de un elemento al hacer clic.
+
         $('#visibilidad').on("click",function () {
                 $('.cajadeVisibilidad').toggle(500);
         })
-        //8
+        //       - 10-Haz que un <div> se desplace suavemente a una posición específica en la página. -->
+
         $('#derechaCaja').on("click",function () {
             $('.moverCaja').animate({ "left": "+=50px" }, "slow" );
         })
-
-        //9
+        $('#izquierdaCaja').on("click",function () {
+            $('.moverCaja').animate({ "left": "-=50px" }, "slow" );
+        })
+        //  MIRAR U OCULTAR
         $('#btnToggle').on("click",function () {
             $(".cajaVisualToggle").toggle();
         })
         
-        //10
+        // MOVER CAJA AL CENTRO
         $('#movercajita').on("click",function () {
             $('.cajita').animate({ left: '500px' });
         })
-
-
-
-
 
         })
         
@@ -92,18 +99,6 @@
 
 </head>
 <body>
-    <!-- 1. Ejercicios con jQuery UI: Efectos y Animaciones
-        Ejercicios:
-       - 1-Haz que un <div> con clase .cuadro se desvanezca (fade) cuando se haga clic en un botón con id #fadeButton.
-       - 2-Crea un efecto de deslizamiento (slideUp) para un <p> cuando el usuario haga clic en un botón.
-       - 3-Haz que un elemento con clase .oculto se muestre con una animación (fadeIn) cuando se haga clic en un botón.
-       - 4-Aplica un efecto de desvanecimiento al pasar el ratón sobre una imagen.
-       - 5-Haz que un <div> con clase .animado se deslice hacia abajo (slideDown) al hacer clic en un botón con id #slideButton.
-       - 6-Haz que el color de fondo de un <div> cambie de manera animada cuando se pase el ratón sobre él.
-       - 7-Usa un efecto de desvanecimiento para mostrar y ocultar un <div> al hacer clic en un botón.
-       - 8-Haz que un texto se deslice de izquierda a derecha usando show() y hide().
-       - 9-Usa el método toggle() para alternar la visibilidad de un elemento al hacer clic.
-       - 10-Haz que un <div> se desplace suavemente a una posición específica en la página. -->
     
     <div class="cuadro" id="cuadro">Desvanecer</div>
 
