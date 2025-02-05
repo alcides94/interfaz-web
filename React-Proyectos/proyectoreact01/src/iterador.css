@@ -1,0 +1,11 @@
+.App {
+    text-align: center;
+  }
+  
+  .iterador{
+    font-size: 40px;
+    border: red solid 1px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+  }
