@@ -1,23 +1,16 @@
-//import { useState } from 'react'
+import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import {signal} from "@preact/signals-react"
-
 import './App.css'
 
-const count = signal(0);
+import { signal } from "@preact/signals-react";
 
 function App() {
   //const [count, setCount] = useState(0)
-  
- 
 
-  //1-se agrego para mostrar por consola
-  console.log("Re-Render");
+  const count =signal(0);
+  console.log("hola");
   
-  //-se procede a mostrar los componentes a traves del navegador
-  //indicando que se carga todo el componente
-
 
   return (
     <>
@@ -31,9 +24,8 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-    
         <button onClick={() => count.value++}>
-        count is {count}
+          count is {count}
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
