@@ -1,0 +1,9 @@
+npx create-react-app practica
+
+cd practica
+
+npm install
+
+npm install web-vitals
+
+npm start

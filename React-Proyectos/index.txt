@@ -1,0 +1,53 @@
+mport React from "react";
+import FamousCard from "./components/FamousCard";
+
+const famousPeople = [
+    { name: "Lionel", surname: "Messi", color: "blue" },
+    { name: "Ada", surname: "Lovelace", color: "purple" },
+    { name: "Albert", surname: "Einstein", color: "green" },
+    { name: "Marie", surname: "Curie", color: "yellow" }
+];
+
+function App() {
+    return React.createElement(
+        "div",
+        null,
+        React.createElement("h1", null, "Lista de Famosos"),
+        famousPeople.map((person, index) =>
+            React.createElement(FamousCard, { key: index, person, index })
+        )
+    );
+}
+
+export default App;
+[13/2, 11:56] Al: Componente.js 
+
+import React from "react";
+
+function FamousCard({ person, index }) {
+    return React.createElement(
+        "div",
+        {
+            style: {
+                border: `2px solid ${person.color}`,
+                padding: "10px",
+                margin: "10px",
+                borderRadius: "5px",
+                backgroundColor: person.color + "30"
+            }
+        },
+        React.createElement("h1", null, `Famoso #${index + 1}`),
+        React.createElement("h2", null, `${person.name}`),
+        React.createElement("h3", null, `${person.surname}`)
+    );
+}
+
+export default FamousCard;
+[13/2, 11:56] Al: Explicación
+En App.js:
+
+Se mapea el array de famosos y se pasa el famoso y su posición (index) como props al componente FamousCard.
+En FamousCard.js:
+
+Se recibe el famoso y la posición.
+Se muestra el número de famoso (index + 1) en h1, el nombre en h2 y el apellido en h3.

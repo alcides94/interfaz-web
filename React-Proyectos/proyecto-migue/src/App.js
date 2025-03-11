@@ -12,7 +12,13 @@ function App() {
 
   return (
     <> 
+      <Iterador/>
+      <Selector/>
+      <Sumar/>
+      <Imagen/>
+      <Imagenes/>
     </>
+    
   );
 }
 
